@@ -1,1 +1,23 @@
-!function(t,o){function i(){this.audio=new Audio,this.status="noPlay"}i.prototype.play=function(){this.audio.play(),this.status="play"},i.prototype.pause=function(){this.audio.pause(),this.status="noPlay"},i.prototype.load=function(t){this.audio.src=t},i.prototype.playTo=function(t){this.audio.currentTime=t,this.audio.play()},o.audio=new i}(window.Zepto,window.player||(window.player={}));
+(function($,root){
+    function MyAudio(){
+        this.audio = new Audio();
+        this.status = 'noPlay';
+    }
+    MyAudio.prototype.play=function(){
+        this.audio.play();
+        this.status='play';
+    }
+    MyAudio.prototype.pause=function(){
+        this.audio.pause();
+        this.status='noPlay';
+    }
+    MyAudio.prototype.load=function(src){
+        this.audio.src=src;
+    }
+    MyAudio.prototype.playTo=function(time){
+        console.log(time)
+        this.audio.currentTime=time;
+        this.audio.play();
+    }
+    root.audio = new MyAudio();
+})(window.Zepto,window.player||(window.player={}))
