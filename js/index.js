@@ -16,9 +16,6 @@ function getData(){
         success:function(data){
             console.log(data)
             dataAll = data;
-            for(var i = 0; i<3;i++){
-                player.audio.load(dataAll[i].audio);
-            }
             curIndex = 0;
             len = data.length;
             $('body').trigger('data:click');
